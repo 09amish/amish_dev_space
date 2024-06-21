@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Amish's Dev Space</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #f1f1f1;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #282828 25%, transparent 25%),
+                linear-gradient(-45deg, #1f1f1f 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #282828 75%),
+                linear-gradient(-45deg, transparent 75%, #1f1f1f 75%);
+            background-size: 50px 50px;
+            animation: backgroundMove 7s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0 0, 0 0, 0 0, 0 0;
+            }
+
+            100% {
+                background-position: 50px 50px, -50px -50px, 50px -50px, -50px 50px;
+            }
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #535353;
+        }
+
+        .left a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .left a:hover {
+            color: #9b9b9b;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: #000000aa;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            margin: 20px 0;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(79, 79, 79, 0.6);
+        }
+
+        .about-box {
+            padding: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image {
+            margin: 20px 0;
+        }
+
+        .profile-image img {
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+            width: 300px;
+            height: 300px;
+        }
+
+        .profile-image img:hover {
+            transform: scale(1.2);
+        }
+
+        h1,
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            /* Center-align the headings */
+            transition: transform 0.3s ease-in-out;
+            margin: 0;
+            /* Remove default margin */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+
+        h1:hover,
+        h2:hover {
+            transform: scale(1.1);
+        }
+
+        p,
+        ul {
+            line-height: 1.6;
+            text-align: justify;
+            padding: 0 10px;
+        }
+
+        .bg{
+            background: #282828;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items:center;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .bg{
+            box-shadow: 0 20px 40px rgba(59, 59, 59, 0.6);
+        }
+
+        .stars {
+            font-size: 1.5rem;
+        }
+
+        .stars::before {
+            content: '★★★★★';
+            letter-spacing: 5px;
+            background: linear-gradient(90deg, gold 0%, gold calc(var(--rating) * 20%), rgb(228, 228, 228) calc(var(--rating) * 20%));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .profile-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .box {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .about-box {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-image img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .left a {
+                font-size: 1.2rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p,
+            ul {
+                padding: 0 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"><a href="index.html">Amish's Dev Space</a></div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="box about-box">
+            <h1>About Me</h1>
+            <div class="profile-image">
+                <img src="profile.jpg" alt="Amish Neema">
+            </div>
+            <p>Hello! I'm Amish Neema</p>
+            <p style="text-align: center;">I'm on a journey to become proficient in Python and database management. With
+                a strong foundation in DSA, I'm poised to delve deeper into the realm of Data Science, leveraging my
+                analytical skills to unlock insights and solve real-world problems.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h2>Experience</h2>
+            <p>During my undergraduate studies, I've been actively involved in various academic projects that have
+                helped
+                me develop a solid foundation in both artificial intelligence and web development. I completed the "Introduction to Artificial
+                    Intelligence"</a>
+                course on Coursera, where I gained comprehensive knowledge about AI concepts and techniques. In
+                parallel,
+                I had the opportunity to apply my Python development skills during an internship at Octanet.
+                Additionally, I
+                embarked on a journey into the realm of data science, delving into the fundamentals of data analysis,
+                machine learning, and statistical modeling.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h2>Skills</h2>
+            <ul class="skills">
+                <li class="bg">Python
+                    <div class="stars" style="--rating: 4;"></div>
+                </li>
+                <li class="bg">DSA
+                    <div class="stars" style="--rating: 3;"></div>
+                </li>
+                <li class="bg">Web development
+                    <div class="stars" style="--rating: 4;"></div>
+                </li>
+                <li class="bg">AI
+                    <div class="stars" style="--rating: 3;"></div>
+                </li>
+                <li class="bg">Data Science
+                    <div class="stars" style="--rating: 3;"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h2>Education</h2>
+            <p>I am pursuing BTech. in Computer Science Engineering from SVIIT, Indore. During my time there, I focused
+                on
+                software development and artificial intelligence, which laid a solid foundation for my career.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h2>Personal Interests</h2>
+            <p>Outside of my academic pursuits, I actively participate in sports activities, finding
+                fulfillment in the camaraderie and physical challenge they offer. As an avid sports fan, I find joy in
+                following matches, analyzing player strategies, and discussing the latest developments.</p>
+        </div>
+    </div>
+    <div class="background-animation"></div>
+</body>
+
+</html>

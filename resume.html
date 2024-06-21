@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .left a {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .right ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .right ul li {
+      margin-right: 20px;
+    }
+
+    .right ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .right ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .left a {
+        font-size: 0.5 rem;
+      }
+
+      .right ul li {
+        margin-right: 100px;
+      }
+
+      .right ul li a {
+        font-size: 0.9rem;
+      }
+
+      /* Ensure the image is positioned below the navigation bar */
+      .content {
+        padding-top: 20px; /* Adjust as needed */
+      }
+
+      img {
+        display: block;
+        align-items: center;
+        width: 75%; /* Adjust as needed */
+        max-width: 100%; /* Ensure image does not exceed container width */
+        height: auto;
+        margin-top: 200px; /* Adjust as needed */
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left"><a href="index.html">Amish's Dev Space</a></div>
+      <div class="right">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="">Projects</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content container -->
+  <div class="content">
+    <img src="amish_resume.png" alt="Amish's Resume">
+  </div>
+
+</body>
+
+</html>
