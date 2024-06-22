@@ -27,8 +27,7 @@ This portfolio website serves as a platform to highlight my experience, skills, 
 
 - HTML5
 - CSS3 (Flexbox/Grid for layout)
-- JavaScript (Typed.js for typing animation)
-- Font Awesome (for icons)
+- JavaScript
 - GitHub Pages (for deployment)
 
 ## Installation
@@ -37,5 +36,5 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/09amish/amish_dev_space.git
    cd your-repository
